@@ -39,6 +39,13 @@ wire not_3_and_2_and_not_1_and_0;
 wire not_3_and_2_and_1_and_not_0;
 wire not_b;
 
+wire 1_and_0;
+wire not_3_and_2_and_1_and_0;
+wire is_3_and_not_2_and_not_1_and_0;
+wire p1;
+wire p2;
+wire not_d;
+
 assign not_numeral_bit_3 = ~ numeral_bit[3];
 assign not_numeral_bit_2 = ~ numeral_bit[2];
 assign not_numeral_bit_1 = ~ numeral_bit[1];
@@ -65,6 +72,16 @@ assign not_3_and_not_2 = not_numeral_bit_3 & not_numeral_bit_2;
 assign 1_and_not_0 = numeral_bit[1] & not_numeral_bit_0;
 assign parenthesis = not_3_and_not_2 & 1_and_not_0;
 assign c = ~parenthesis;
+
+
+assign 1_and_0 = numeral_bit[1] & numeral_bit[0];
+assign not_3_and_2_and_1_and_0 = not_3_and_is_2 & 1_and_0;
+assign is_3_and_not_2_and_not_1_and_0 = is_3_and_not_2 & not_1_and_0;
+assign p1 = not_3_and_not_2_and_not_1_and_0 | not_3_and_2_and_not_1_and_not_0;
+assign p2 = not_3_and_2_and_1_and_0 | is_3_and_not_2_and_not_1_and_0;
+assign not_d = p1 | p2;
+assign d = ~not_d;
+
 
 
 assign not_numeral_bit_3 = ~ numeral_bit[3];
