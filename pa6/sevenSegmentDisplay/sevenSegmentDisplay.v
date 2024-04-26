@@ -35,6 +35,10 @@ wire not_3_and_not_2_and_not_1_and_0;
 wire not_a;
 wire not_3_and_2_and_not_1_and_not_0;
 
+wire not_3_and_2_and_not_1_and_0;
+wire not_3_and_2_and_1_and_not_0;
+wire not_b;
+
 assign not_numeral_bit_3 = ~ numeral_bit[3];
 assign not_numeral_bit_2 = ~ numeral_bit[2];
 assign not_numeral_bit_1 = ~ numeral_bit[1];
@@ -49,6 +53,12 @@ assign not_1_and_not_0 = not_numeral_bit_1 & not_numeral_bit_0;
 assign not_3_and_2_and_not_1_and_not_0 = not_3_and_is_2 & not_1_and_not_0;
 assign not_a = not_3_and_2_and_not_1_and_not_0 | not_3_and_not_2_and_not_1_and_0;
 assign a = ~not_a;
+
+
+assign not_3_and_2_and_not_1_and_0 = not_3_and_is_2 & not_1_and_0;
+assign not_3_and_2_and_1_and_not_0 = not_3_and_is_2 & 1_and_not_0;
+assign not_b = not_3_and_2_and_not_1_and_0 | not_3_and_2_and_1_and_not_0;
+assign b = ~not_b;
 
 
 assign not_3_and_not_2 = not_numeral_bit_3 & not_numeral_bit_2;
