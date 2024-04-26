@@ -46,6 +46,12 @@ wire p1;
 wire p2;
 wire not_d;
 
+wire not_3_and_not_2_and_1_and_not_0;
+wire not_3_and_not_2_and_1_and_0;
+wire p2;
+wire p3;
+wire not_f;
+
 assign not_numeral_bit_3 = ~ numeral_bit[3];
 assign not_numeral_bit_2 = ~ numeral_bit[2];
 assign not_numeral_bit_1 = ~ numeral_bit[1];
@@ -83,7 +89,6 @@ assign not_d = p1 | p2;
 assign d = ~not_d;
 
 
-
 assign not_numeral_bit_3 = ~ numeral_bit[3];
 assign not_numeral_bit_2 = ~ numeral_bit[2];
 assign not_numeral_bit_1 = ~ numeral_bit[1];
@@ -100,3 +105,12 @@ assign minterm_08 = is_3_and_not_2 & not_1_and_not_0;
 assign minterm_00_or_minterm_02 = minterm_00 | minterm_02;
 assign minterm_06_or_minterm_08 = minterm_06 | minterm_08;
 assign e = minterm_00_or_minterm_02 | minterm_06_or_minterm_08;
+
+
+
+assign not_3_and_not_2_and_1_and_not_0 = not_3_and_not_2 & is_1_and_not_0;
+assign not_3_and_not_2_and_1_and_0 = not_3_and_not_2 & 1_and_0;
+assign p2 = not_3_and_not_2_and_not_1_and_0 | not_3_and_not_2_and_1_and_not_0;
+assign p3 = not_3_and_not_2_and_1_and_0 | not_3_and_2_and_1_and_0;
+assign not_f = p2 | p3;
+assign f = ~not_f;
